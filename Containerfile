@@ -26,7 +26,7 @@ kernel_name='kernel-core kernel-modules-extra'
 dnf install --assumeyes --disablerepo=* --enablerepo=voyager $kernel_name
 
 kver=$(ls /usr/lib/modules)
-env DRACUT_NO_XATTR=1 dracut -vf /usr/lib/modules/$kver/initramfs.img "$kver"
+DRACUT_NO_XATTR=1 dracut -vf /usr/lib/modules/$kver/initramfs.img "$kver"
 EOF
 
 LABEL org.opencontainers.image.version=$VERSION
